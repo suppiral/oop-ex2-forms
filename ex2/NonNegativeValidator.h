@@ -2,8 +2,7 @@
 
 #include "Validator.h"
 
-template <class T>
-class NonNegativeValidator:public Validator{
+class NonNegativeValidator : public Validator {
 public:
 	NonNegativeValidator();
 	virtual bool validate();
