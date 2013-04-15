@@ -7,14 +7,13 @@ class BaseField
 {
 public:
 	BaseField(const string& str);
-	void addValidator(Validator* validator);
-	virtual bool validate() = 0;
+	
+	virtual bool validate() const = 0;
 	virtual void print(ostream& os) const = 0;
 	void printQuestion(ostream& os) const;
-	virtual void fillField();
+	virtual void fillField() = 0;
 
 private:
-	vector<Validator*> _validators;
 	string _question;
 };
 

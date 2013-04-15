@@ -1,9 +1,11 @@
 # pragma once 
 #include "Validator.h"
+#include "Configuration.h"
 
-class NonDigitValidator: public Validator{
+class NonDigitValidator : public Validator<string> {
 public:
-	NonDigitValidator();
-	virtual bool validate() { return true; } ; 
+	virtual bool validate(const string& str) const;
 
 };
+
+

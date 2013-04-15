@@ -8,7 +8,7 @@ void Form::addField(BaseField* field)
 }
 
 // adds a validator to form
-void Form::addValidator(Validator* validator)
+void Form::addValidator(FormValidator* validator)
 {
 	_validators.push_back(validator);
 }
@@ -31,7 +31,12 @@ bool Form::validateForm() const
 void Form::printForm(ostream& os) const
 {
 	for (unsigned i = 0; i < _fields.size(); i++)
-		os << _fields[i];
+	{
+		os << "------------------------------------------------------------" << endl;
+		_fields[i]->print(os);
+		os << endl;
+		os << "------------------------------------------------------------" << endl;
+	}
 
 }
 
@@ -48,4 +53,5 @@ void Form::fillForm()
 ostream& operator<<(ostream& os, const Form& form)
 {
 	form.printForm(os);
+	return os;
 }

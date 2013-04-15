@@ -48,6 +48,9 @@
     <ClInclude Include="BaseField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FormValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -57,6 +60,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="basefield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nondigitvalidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="monthvalue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

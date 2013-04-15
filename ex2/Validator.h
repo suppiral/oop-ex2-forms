@@ -2,10 +2,13 @@
 
 #pragma once 
 
+#include "Configuration.h"
+
+
+template <class T>
 class Validator {
 public:
-	Validator();
-	virtual bool validate() = 0;
+	virtual bool validate(const T& t) const = 0;
 
 private:
 

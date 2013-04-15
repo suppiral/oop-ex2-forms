@@ -2,13 +2,12 @@
 
 #include "Configuration.h"
 #include "BaseField.h"
-#include "Validator.h"
+#include "FormValidator.h"
 
 class Form {
 public:
-	Form();
 	void addField(BaseField* field);
-	void addValidator(Validator* validator);
+	void addValidator(FormValidator* validator);
 	void fillForm();
 	bool validateForm() const;
 
@@ -16,7 +15,7 @@ public:
 
 private:
 	vector<BaseField*> _fields;
-	vector<Validator*> _validators;
+	vector<FormValidator*> _validators;
 };
 
-ostream& operator<<(std::ostream& os, const Form& form);
+ostream& operator<<(ostream& os, const Form& form);
