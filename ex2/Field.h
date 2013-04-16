@@ -10,7 +10,7 @@ template <class T>
 class Field : public BaseField 
 {
 public:
-	Field(const string& str) : BaseField(str) { }
+	Field(const string& str) : BaseField(str), _isCorrect(false) { }
 
 	virtual bool validate() const {
 		for (unsigned i = 0; i < _validators.size(); i++)
@@ -37,6 +37,12 @@ public:
 		printQuestion(cout);
 		cout << endl;
 		cin >> _value;
+		
+		_isCorrect = validate();
+	}
+
+	virtual bool isCorrect() const {
+		return _isCorrect;
 	}
 
 	void addValidator(Validator<T>* validator) { _validators.push_back(validator); }
@@ -45,8 +51,12 @@ public:
 		return _value;
 	}
 
+	virtual void setIncorrect() {
+		_isCorrect = false;
+	}
 
 private:
 	T _value;
 	vector<Validator<T>*> _validators;
+	bool _isCorrect;
 };

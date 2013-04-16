@@ -7,7 +7,7 @@
 template < class T1, class T2 >
 class AgeYearValidator : public FormValidator {
 public:
-	AgeYearValidator(const Field<double>& age, const Field<int>& year) : _ageField(age), _yearField(year) {}
+	AgeYearValidator(Field<double>& age, Field<int>& year) : _ageField(age), _yearField(year) {}
 	virtual bool validate() const {
 
 
@@ -15,11 +15,29 @@ public:
 /*		time_t curTime = time(NULL);
 		tm *tmData = localtime(curTime);
 		int year = tmData->tm_year + 1900;
-
-		return (year + int(_ageField.getValue()) == _yearField.getValue() &&  year + int(_ageField.getValue()) +1 == _yearField.getValue());
 */
-		return true;
+		int year = 2013;
+
+		if (_yearField.getValue() + int(_ageField.getValue()) == year || _yearField.getValue() + int(_ageField.getValue()) +1 == year)
+			return true;
+
+		// else: 
+
+		_ageField.setIncorrect();
+		_yearField.setIncorrect();
+
+		return false;
 	}
-	const Field<double>& _ageField;
-	const Field<int>& _yearField;
+
+	virtual ostream& printErr(ostream& os) const {
+		if (validate())
+			return os;
+
+		os << "Age and year don't match" << endl;
+		return os;
+	}
+
+
+	Field<double>& _ageField;
+	Field<int>& _yearField;
 };

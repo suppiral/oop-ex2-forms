@@ -12,6 +12,8 @@ public:
 	virtual ostream& print(ostream& os) const = 0;
 	ostream& printQuestion(ostream& os) const;
 	virtual void fillField() = 0;
+	virtual bool isCorrect() const = 0;
+	virtual void setIncorrect() = 0;
 
 private:
 	string _question;

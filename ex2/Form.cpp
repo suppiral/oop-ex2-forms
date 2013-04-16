@@ -17,7 +17,7 @@ bool Form::validateForm() const
 {
 	// check fields
 	for (unsigned i = 0; i < _fields.size(); i++)
-		if (!_fields[i]->validate())
+		if (!_fields[i]->isCorrect())
 			return false;
 
 	// check validators
@@ -38,12 +38,15 @@ void Form::printForm(ostream& os) const
 		os << "------------------------------------------------------------" << endl;
 	}
 
+	for (unsigned i = 0; i < _validators.size(); i++)
+			_validators[i]->printErr(os);
+
 }
 
 void Form::fillForm()
 {
 	for (unsigned i = 0; i < _fields.size(); i++)
-		if (!_fields[i]->validate())
+		if (!_fields[i]->isCorrect())
 			_fields[i]->fillField();
 
 }
