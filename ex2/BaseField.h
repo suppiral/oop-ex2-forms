@@ -9,8 +9,8 @@ public:
 	BaseField(const string& str);
 	
 	virtual bool validate() const = 0;
-	virtual void print(ostream& os) const = 0;
-	void printQuestion(ostream& os) const;
+	virtual ostream& print(ostream& os) const = 0;
+	ostream& printQuestion(ostream& os) const;
 	virtual void fillField() = 0;
 
 private:

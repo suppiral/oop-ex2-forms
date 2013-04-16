@@ -19,17 +19,18 @@ public:
 		return true;
 	}
 
-	virtual void print(ostream& os) const {
+	virtual ostream& print(ostream& os) const {
 		printQuestion(os);
 		os << " = " << _value;
 		// print errors (if any)
-	/*	for (unsigned i = 0; i < _validators.size(); i++)
+		for (unsigned i = 0; i < _validators.size(); i++)
 		{
 			os << "      ";
-			_validators[i]->printerr(os);
+			_validators[i]->printErr(os, _value);
 			os << "      ";
 		}
-	*/
+		
+		return os;
 	}
 	
 	virtual void fillField() {

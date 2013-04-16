@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClCompile Include="basefield.cpp" />
     <ClCompile Include="form.cpp" />
+    <ClCompile Include="IDValidator.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="monthvalue.cpp" />
     <ClCompile Include="nondigitvalidator.cpp" />

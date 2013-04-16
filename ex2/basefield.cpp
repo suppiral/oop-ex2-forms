@@ -10,4 +10,8 @@ ostream& operator<<(ostream& os, const BaseField& field)
 BaseField::BaseField(const string& str) : _question(str) { }
 
 
-void BaseField::printQuestion(ostream& os) const { os << _question; }
+ostream& BaseField::printQuestion(ostream& os) const 
+{
+	os << _question; 
+	return os;
+}

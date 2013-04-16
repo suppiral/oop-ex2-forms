@@ -43,7 +43,8 @@ void Form::printForm(ostream& os) const
 void Form::fillForm()
 {
 	for (unsigned i = 0; i < _fields.size(); i++)
-		_fields[i]->fillField();
+		if (!_fields[i]->validate())
+			_fields[i]->fillField();
 
 }
 

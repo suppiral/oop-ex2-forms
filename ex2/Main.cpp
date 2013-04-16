@@ -113,6 +113,9 @@ int main()
 	delete yearValidator;
 	delete monthValidator;
 	delete formValidator;
+
+	
+	system("pause");
 }
 
 void displayFormFields(const Form& toDisplay)

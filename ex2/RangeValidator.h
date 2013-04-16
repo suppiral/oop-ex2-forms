@@ -9,6 +9,11 @@ public:
 	virtual bool validate(const T& t) const {
 		return (_lower_limit <= t && t <= _upper_limit);
 	}
+	virtual ostream& printErr(ostream& os, const T& t) const {
+		if (!validate(t))
+			os << "Out of range";
+		return os;
+	}
 
 private:
 	int _lower_limit;

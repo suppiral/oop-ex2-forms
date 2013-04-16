@@ -9,7 +9,5 @@ template <class T>
 class Validator {
 public:
 	virtual bool validate(const T& t) const = 0;
-
-private:
-
+	virtual ostream& printErr(ostream& os, const T& t) const = 0;
 };
