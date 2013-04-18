@@ -7,7 +7,7 @@
 template < class T1, class T2 >
 class AgeYearValidator : public FormValidator {
 public:
-	AgeYearValidator(Field<double>& age, Field<int>& year) : _ageField(age), _yearField(year) {}
+	AgeYearValidator(T1& age, T2& year) : _ageField(age), _yearField(year) {}
 	virtual bool validate() const {
 
 
@@ -38,6 +38,6 @@ public:
 	}
 
 
-	Field<double>& _ageField;
-	Field<int>& _yearField;
+	T1& _ageField;
+	T2& _yearField;
 };

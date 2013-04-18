@@ -21,12 +21,12 @@ public:
 
 	virtual ostream& print(ostream& os) const {
 		printQuestion(os);
-		os << " = " << _value;
+		os << " = " << getValue();
 		// print errors (if any)
 		for (unsigned i = 0; i < _validators.size(); i++)
 		{
 			os << "      ";
-			_validators[i]->printErr(os, _value);
+			_validators[i]->printErr(os, getValue());
 			os << "      ";
 		}
 		
