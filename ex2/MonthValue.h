@@ -1,3 +1,5 @@
+// month value type.
+
 #pragma once
 
 #include "Configuration.h"

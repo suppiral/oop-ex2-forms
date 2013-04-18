@@ -1,4 +1,7 @@
-# pragma once 
+// NonDigitValidator class checks if a string contains digits.
+
+#pragma once 
+
 #include "Validator.h"
 #include "Configuration.h"
 

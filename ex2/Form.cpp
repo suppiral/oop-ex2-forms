@@ -1,5 +1,6 @@
-#include "Form.h"
+// Form class source file.
 
+#include "Form.h"
 
 // adds a field to form
 void Form::addField(BaseField* field)
@@ -13,6 +14,7 @@ void Form::addValidator(FormValidator* validator)
 	_validators.push_back(validator);
 }
 
+// checks if the form is valid
 bool Form::validateForm() const
 {
 	// check fields
@@ -28,6 +30,7 @@ bool Form::validateForm() const
 	return true;
 }
 
+// prints the form
 void Form::printForm(ostream& os) const
 {
 	for (unsigned i = 0; i < _fields.size(); i++)

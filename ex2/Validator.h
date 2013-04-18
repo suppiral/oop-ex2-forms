@@ -1,4 +1,4 @@
-//this is the header file for Validator class 
+//this is the header file for Validator class. important for polymorphism
 
 #pragma once 
 

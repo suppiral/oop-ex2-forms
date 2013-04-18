@@ -1,4 +1,6 @@
-# pragma once
+// id validator checks if the id is ok.
+
+#pragma once
 #include "Validator.h"
 #include "Configuration.h"
 

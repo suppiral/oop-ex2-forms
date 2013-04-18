@@ -1,3 +1,5 @@
+// Base field class. all fields are derived from it. this is a non template class important for polymorphism of fields in forms.
+
 #pragma once
 
 #include "Configuration.h"

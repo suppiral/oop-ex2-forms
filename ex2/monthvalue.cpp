@@ -1,6 +1,8 @@
+// month value type source
+
 #include "MonthValue.h"
 
-
+// prints the month's name
 ostream& operator<<(ostream& os, const MonthValue& month)
 {
 	switch (month.getValue()) 
@@ -48,6 +50,7 @@ ostream& operator<<(ostream& os, const MonthValue& month)
 	return os;
 }
 
+// read month value from input stream
 istream& operator>>(istream& is, MonthValue& month)
 {
 	is >> month._value;

@@ -2,7 +2,7 @@
 #include <cctype>
 
 
-/// note to self: put it in a cpp file
+// check if the string has no digits
 bool NonDigitValidator::validate(const string& str) const 
 {
 	if (str.size() == 0)
@@ -12,7 +12,7 @@ bool NonDigitValidator::validate(const string& str) const
 			return false;
 	return true; 
 }
-
+// print error if there's a problem
 ostream& NonDigitValidator::printErr(ostream& os, const string& str) const 
 {
 	if (!validate(str))

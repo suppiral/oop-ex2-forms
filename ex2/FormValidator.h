@@ -1,3 +1,5 @@
+// Form validator for Form class. base class used for polymorphism
+
 #pragma once
 #include "Configuration.h"
 
